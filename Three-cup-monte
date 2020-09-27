@@ -1,7 +1,9 @@
 #three cup monte game
-from random import shuffle
+#A random number guessing game using python
+
+from random import shuffle 
 mylist=[' ','0',' ']
-def shuffle_list(mylist):
+def shuffle_list(mylist):     #take in list, and returned shuffled list
     shuffle(mylist)
     
     return(mylist)
@@ -16,16 +18,23 @@ def player_guess():
         
     return int(guess)
 
-def check_guess(mylist,guess):
+def check_guess(mylist,guess):  #checking user's guess
     if mylist[guess]=='0':
-        print('correct')
+        print('correct guess!')      #we only print here bc we have no need to save a user's gyess or the shuffled list
     else:
         print('wrong guess')
         print(mylist)
+#now we create a little setup logic to run all the functions.
+
+#initial list
 mylist=[' ','0',' ']
 
+#shuffle list
 mixedup_list=shuffle_list(mylist)
 
+#get user's guess
 guess=player_guess()
 
+#check user's guess
+#this function takes in the input based on the output of other functions
 check_guess(mixedup_list,guess)
